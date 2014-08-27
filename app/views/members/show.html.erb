@@ -1,0 +1,37 @@
+<div class="panel1">
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @member.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @member.last_name %>
+</p>
+
+<p>
+  <strong>Avatar:</strong>
+  <%= @member.avatar %>
+</p>
+
+<p>
+  <strong>Nickname:</strong>
+  <%= @member.nickname %>
+</p>
+
+<p>
+  <strong>Jersey number:</strong>
+  <%= @member.jersey_number %>
+</p>
+
+<p>
+  <strong>Member type:</strong>
+  <%= @member.member_type.name %>
+</p>
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>
+</div>

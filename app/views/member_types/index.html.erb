@@ -1,0 +1,25 @@
+<div class="panel1">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @member_types.each do |member_type| %>
+      <tr>
+        <td><%= member_type.name %></td>
+        <td><%= link_to 'Show', member_type %></td>
+        <td><%= link_to 'Edit', edit_member_type_path(member_type) %></td>
+        <td><%= link_to 'Destroy', member_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Member type', new_member_type_path %>
+</div>
