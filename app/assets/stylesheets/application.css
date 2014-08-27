@@ -13,3 +13,73 @@
  *= require_tree .
  *= require_self
  */
+
+a, a:hover, a:visited {color:#df276d;}
+body {
+	background-color: #000;
+	/*color: #fff;*/
+	color: #df276d;
+
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 13px;
+	line-height: 18px;
+	background-size: 100%;
+	background-attachment:fixed;
+
+}
+.drill_description{
+	font-size:20px;
+	line-height:26px;
+}
+.drill_description ul li{font-size:20px;}
+
+.profile_page .avatar{width:90%;border:solid 1px #fff;border-radius:5px;}
+
+.posts .panel1 {margin-bottom:50px;}
+.posts p {color:#fff;font-size:1.45em;line-height:1.50em;}
+.posts h3 {font-style:italic;font-size:2em%;color:#999;}
+.navbar-inverse .navbar-brand {color: #df276d;}
+
+
+.player_card {height:300px;background-position: center center;}
+
+/*.roster li {padding-bottom:20px;color:#fff;}*/
+.roster .avatar {height:333px;width:250px;}
+.roster .row {margin-bottom:15px;}
+.roster h1 {color:#fff;}
+.roster h2 a {font-size:25px;color:#df276d;}
+.roster h3 {font-size:20px;}
+.roster h4 {font-size:40px;}
+.nickname{font-style:italic;font-weight:400;color:#fff;font-size:16px;}
+
+.schedule td {color:#fff;font-size:1.5em;}
+.schedule th {font-size:1.5em;}
+
+.panel1{
+	padding:10px;
+	border-radius:8px;
+	background-color: rgba(0,0,0,0.7);
+	border-width: 0px;
+}
+
+.panel2{
+	padding:10px;
+	border-radius:8px;
+	background-color: rgba(0,0,0,0.9);
+	border-width: 0px;
+}
+
+.record_panel{
+	padding:10px;
+	border-radius:8px;
+	background-color: rgba(255,0,0,0.7);
+	border-width: 0px;
+	color:#fff;
+	font-size:20px;
+	font-weight:bold;
+}
+
+.player-card {padding:5px;border:solid 1px #df276d;margin-bottom:20px;border-radius:5px;}
+
+.away, .away:visited {color:#f3adc7;font-style:italic;}
+.home {}

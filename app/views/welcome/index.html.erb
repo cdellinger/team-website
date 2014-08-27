@@ -1,9 +1,11 @@
 <div class="posts">
-<% @posts.each do |post| %>
-  <div class="panel1">
-    <h2><%= post.title %></h2>
-    <h3><%= post.posted_on %></h3>
-    <p><%= post.body.html_safe %></p>
-  </div>
+<% if @posts.nil? == false %>
+  <% @posts.each do |post| %>
+    <div class="panel1">
+      <h2><%= post.title %></h2>
+      <h3><%= post.posted_on %></h3>
+      <p><%= post.body.html_safe %></p>
+    </div>
+  <% end %>
 <% end %>
 </div>

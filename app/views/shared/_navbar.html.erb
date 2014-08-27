@@ -1,0 +1,45 @@
+<nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/"><%= @website_name %></a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+
+      <% if @current_teams.nil? %>
+
+      <% elsif @current_teams.length > 1 %>
+        <li class="dropdown">
+          <a href="/current_roster" class="dropdown-toggle" data-toggle="dropdown">Roster <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <% @current_teams.each do |team| %>
+            <li><a href="/current_roster/<%= team.id %>"><%= team.name %></a></li>
+            <% end %>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="/current_schedule" class="dropdown-toggle" data-toggle="dropdown">Schedule <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <% @current_teams.each do |team| %>
+            <li><a href="/current_schedule/<%= team.id %>"><%= team.name %></a></li>
+            <% end %>
+          </ul>
+        </li>
+      <% else %>
+        <li class="dropdown"><a href="/current_roster ">Roster</a></li>
+        <li class="dropdown"><a href="/current_schedule">Schedule</a></li>
+      <% end %>
+
+      <li><a href="/albums">Albums</a></li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>

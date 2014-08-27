@@ -1,0 +1,29 @@
+<div class="panel1">
+	<div class="roster">
+		<h1><%= @current_season.name%> Roster</h1>
+		<% x = 0 %>
+		<% pics_per_column = 4 %>
+		<% @members.each do |member| %>
+			<% x = x + 1 %>
+			<% if ((x % pics_per_column) == 1) %>
+				<div class="row">
+			<% end %>
+			<div class="col-md-<%=12/pics_per_column%>">
+			  <div class="media player-card panel2">
+			  	<a href="/roster/<%=member.nickname%>"><%= image_tag(member.avatar, :class=>'media-object avatar') %></a>
+			  	<div class="media-body">
+			  		<h2 class="media-heading text-center"><a href="/roster/<%=member.nickname%>">#<%=member.jersey_number%> <%= member.first_name %> <%= member.last_name %></a></h2>
+			  		<h3 class="nickname text-center">"<%= member.nickname %>"</h3>
+			  	</div>
+			  </div>
+			 </div>
+			<% if ((x % pics_per_column) == 0) %>
+				</div>
+			<% end %>
+		<% end %>
+		<% if ((x % pics_per_column) != 0) && (x > 0) %>
+			</div>
+		<% end %>
+	</div>
+	<br/>
+</div>
