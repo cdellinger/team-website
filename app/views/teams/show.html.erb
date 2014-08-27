@@ -1,0 +1,22 @@
+<div class="panel1">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @team.name %>
+</p>
+
+<p>
+  <strong>Season:</strong>
+  <%= @team.season.name %>
+</p>
+
+<p>
+  <strong>League Page:</strong>
+  <%= @team.league_page %>
+</p>
+
+
+<%= link_to 'Edit', edit_team_path(@team) %> |
+<%= link_to 'Back', teams_path %>
+</div>

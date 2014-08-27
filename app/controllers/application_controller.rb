@@ -10,11 +10,11 @@ protected
   def page_load
     @website_name = ENV['WEBSITE_NAME']
 
-    #@current_season = Season.where(is_current: true)[0]
-    #@current_teams = nil
-    #if @current_season.nil? == false
-  #    Team.where(season_id: @current_season.id)
-  #  end
+    @current_season = Season.where(is_current: true)[0]
+    @current_teams = nil
+    if @current_season.nil? == false
+      @current_teams = Team.where(season_id: @current_season.id)
+    end
 
 
 

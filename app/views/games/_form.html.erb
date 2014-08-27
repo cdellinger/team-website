@@ -1,0 +1,61 @@
+<%= form_for([@team, @game]) do |f| %>
+  <% if @game.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@game.errors.count, "error") %> prohibited this game from being saved:</h2>
+
+      <ul>
+      <% @game.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :opponent %><br>
+    <%= f.text_field :opponent, :size => 30 %>
+  </div>
+  <div class="field">
+    <%= f.label :kickoff %><br>
+    <%= f.datetime_select :kickoff %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location, :size => 30 %>
+  </div>
+  <div class="field">
+    <%= f.label :map_url %><br>
+    <%= f.text_field :map_url, :size => 30 %>
+  </div>
+  <div class="field">
+    <%= f.label :directions %><br>
+    <%= f.text_area :directions, :rows => 7, :cols => 30 %>
+  </div>
+  <div class="field">
+    <%= f.label :team_url %><br>
+    <%= f.text_field :team_url, :size => 30 %>
+  </div>
+  <div class="field">
+    <%= f.label :is_home_game %><br>
+    <%= f.check_box :is_home_game %>
+  </div>
+  <div class="field">
+    <%= f.label :our_score %><br>
+    <%= f.number_field :our_score %>
+  </div>
+  <div class="field">
+    <%= f.label :opponent_score %><br>
+    <%= f.number_field :opponent_score %>
+  </div>
+  <div class="field">
+    <%= f.label :halftime_snack %><br>
+    <%= f.text_field :halftime_snack %>
+  </div>
+  <div class="field">
+    <%= f.label :end_of_game_snack %><br>
+    <%= f.text_field :end_of_game_snack %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

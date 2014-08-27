@@ -1,0 +1,28 @@
+<div class="panel1">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Season</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @teams.each do |team| %>
+      <tr>
+        <td><%= team.name %></td>
+        <td><%= team.season.name %></td>
+        <td><%= link_to 'Games', team_games_path(team) %></td>
+        <td><%= link_to 'Show', team %></td>
+        <td><%= link_to 'Edit', edit_team_path(team) %></td>
+        <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Team', new_team_path %>
+</div>

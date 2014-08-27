@@ -11,10 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140827004847) do
+ActiveRecord::Schema.define(version: 20140827030117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "games", force: true do |t|
+    t.string   "opponent"
+    t.datetime "kickoff"
+    t.string   "location"
+    t.string   "map_url"
+    t.text     "directions"
+    t.string   "team_url"
+    t.string   "halftime_snack"
+    t.string   "end_of_game_snack"
+    t.boolean  "is_home_game"
+    t.integer  "our_score"
+    t.integer  "opponent_score"
+    t.integer  "team_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "games", ["team_id"], name: "index_games_on_team_id", using: :btree
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -30,5 +49,15 @@ ActiveRecord::Schema.define(version: 20140827004847) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "teams", force: true do |t|
+    t.string   "name"
+    t.integer  "season_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "league_page"
+  end
+
+  add_index "teams", ["season_id"], name: "index_teams_on_season_id", using: :btree
 
 end

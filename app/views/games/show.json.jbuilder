@@ -1,0 +1,1 @@
+json.extract! @game, :id, :opponent, :kickoff, :location, :map_url, :directions, :team_url, :halftime_snack, :end_of_game_snack, :is_home_game, :our_score, :opponent_score, :team_id, :created_at, :updated_at

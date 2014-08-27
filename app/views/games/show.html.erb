@@ -1,0 +1,59 @@
+<div class="panel1">
+
+<p id="notice"><%= notice %></p>
+
+<h2><%= @team.name %> - <%= @team.season.name %></h2>
+
+<p>
+  <strong>Opponent:</strong>
+  <%= @game.opponent %>
+</p>
+
+<p>
+  <strong>Kickoff:</strong>
+  <%= @game.kickoff %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @game.location %>
+</p>
+
+<p>
+  <strong>Map url:</strong>
+  <%= @game.map_url %>
+</p>
+
+<p>
+  <strong>Directions:</strong>
+  <%= @game.directions %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @game.our_score %> - <%= @game.opponent_score %>
+</p>
+
+<p>
+  <strong>Is Home Game:</strong>
+  <%= @game.is_home_game %>
+</p>
+
+<p>
+  <strong>Team url:</strong>
+  <%= @game.team_url %>
+</p>
+
+<p>
+  <strong>Halftime snack:</strong>
+  <%= @game.halftime_snack %>
+</p>
+
+<p>
+  <strong>End of game snack:</strong>
+  <%= @game.end_of_game_snack %>
+</p>
+
+<%= link_to 'Edit', edit_team_game_path(params[:team_id], @game) %> |
+<%= link_to 'Back', team_games_path %>
+</div>

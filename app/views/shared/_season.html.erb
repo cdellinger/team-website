@@ -17,22 +17,21 @@
 		<tbody>
 		    <% @games.each do |game| %>
 		      <tr>
-		      	<% if game.location == "Mt. Jackson VA" %>
+		      	<% if game.is_home_game %>
 			        <td><%= link_to game.opponent, game.team_url, :class => 'home' %></td>
 		      	<% else %>
 		        	<td><%= link_to game.opponent, game.team_url, :class => 'away'  %></td>
 		      	<% end %>
 		        <td><%= game.kickoff.strftime("%a %b %d %Y at %I:%M%p") %><br/><%= game.location %> <%= link_to '(map)', game.map_url %></td>
-		        <td align="center"><%= game.result %><br/><%= game.score %></td>
+		        <td align="center"><%= game.our_score %> - <%= game.opponent_score %></td>
 						<td><%= game.halftime_snack %><br/><%= game.end_of_game_snack %></td>
 		      </tr>
 		    <% end %>
 		</tbody>
 	</table>
 	<h3 style="text-align:right">
-		<a style="text-decoration:underline" href="/snacks">Snack Schedule</a>&nbsp;&nbsp;&nbsp;&nbsp;
-		<a style="text-decoration:underline" href="http://www.odsl.org/teams/61194310/62113241-61194434/TEAM.html">ODSL Team Page</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a style="text-decoration:underline" href="<%= @team.league_page %>">League Page</a>&nbsp;&nbsp;&nbsp;&nbsp;
 		<a style="text-decoration:underline" href="/previous_roster/<%=@current_season.id%>">Roster</a>&nbsp;&nbsp;&nbsp;&nbsp;
-		<a style="text-decoration:underline" href="/schedule">Other Seasons</a>
+		<a style="text-decoration:underline" href="/schedule">Other Schedules</a>
 	</h3>
 </div>

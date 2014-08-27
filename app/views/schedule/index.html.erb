@@ -1,0 +1,8 @@
+<div class="panel1">
+<ul>
+  <% @teams.each do |team| %>
+    <li><a href="/schedule/<%= team.id%>"><%= team.season.name %>: <%= team.name %></a></li>
+  <% end %>
+</ul>
+
+</div>

@@ -1,0 +1,34 @@
+<div class="panel1">
+<h2><%= @team.name %> - <%= @team.season.name %></h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Opponent</th>
+      <th>Kickoff</th>
+      <th>Location</th>
+      <th>Result</th>
+      <th>Snacks</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @games.each do |game| %>
+      <tr>
+        <td><%= game.opponent %></td>
+        <td><%= game.kickoff %></td>
+        <td><%= game.location %></td>
+        <td><%= game.our_score %> - <%=game.opponent_score %></td>
+        <td><%= game.halftime_snack %><br/><%= game.end_of_game_snack %></td>
+        <td><%= link_to 'Show', team_game_path(params[:team_id], game) %></td>
+        <td><%= link_to 'Edit', edit_team_game_path(params[:team_id], game) %></td>
+        <td><%= link_to 'Destroy', team_game_path(params[:team_id], game), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Game', new_team_game_path %>
+</div>
