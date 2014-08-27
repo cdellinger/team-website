@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :seasons
+
   resources :posts
 
   root 'welcome#index'
