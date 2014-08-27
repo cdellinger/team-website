@@ -22,6 +22,7 @@ class GamesController < ApplicationController
 
   # GET /games/1/edit
   def edit
+    @team = Team.find(params[:team_id])
   end
 
   # POST /games
