@@ -1,0 +1,26 @@
+<div class="panel1">
+
+<%= form_for([@team, @team_member]) do |f| %>
+  <% if @team_member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@team_member.errors.count, "error") %> prohibited this team member from being saved:</h2>
+
+      <ul>
+      <% @team_member.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.collection_check_boxes(:team_member, :team_member_ids, @members, :id, :full_name)%>
+
+  <div class="field">
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', team_team_members_path %>
+</div>

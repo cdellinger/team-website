@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :teams do
     resources :games
+    resources :team_members
   end
 
   resources :seasons
@@ -17,6 +18,9 @@ Rails.application.routes.draw do
 
   get 'schedule' => 'schedule#index'
   get 'schedule/:team_id' => 'schedule#team_schedule'
+
+  get 'roster' => 'roster#index'
+  get 'roster/:team_id' => 'roster#team_roster'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -14,7 +14,7 @@
         <td><%= team.name %></td>
         <td><%= team.season.name %></td>
         <td><%= link_to 'Games', team_games_path(team) %></td>
-        <td><%= link_to 'Roster', team_rosters_path(team) %></td>
+        <td><%= link_to 'Roster', team_team_members_path(team) %></td>
         <td><%= link_to 'Show', team %></td>
         <td><%= link_to 'Edit', edit_team_path(team) %></td>
         <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
