@@ -20,28 +20,30 @@ protected
 
 
   	current_minute = Time.now.sec
-  	if current_minute < 5
+  	if current_minute < 4
   		@background = 'champs'
-  	elsif current_minute < 10
+  	elsif current_minute < 8
   		@background = 'chaos'
-  	elsif current_minute < 15
+  	elsif current_minute < 12
   		@background = 'checkin'
-  	elsif current_minute < 20
+  	elsif current_minute < 16
   		@background = 'eli'
-  	elsif current_minute < 25
+  	elsif current_minute < 20
   		@background = 'foolingaround'
-  	elsif current_minute < 30
+  	elsif current_minute < 24
   		@background = 'running'
-  	elsif current_minute < 35
+  	elsif current_minute < 28
   		@background = 'trophy'
-    elsif current_minute < 40
+    elsif current_minute < 32
       @background = 'teampic1'
-    elsif current_minute < 45
+    elsif current_minute < 36
       @background = 'DSC_0189'
-    elsif current_minute < 50
+    elsif current_minute < 40
       @background = 'spring_lineup'
-    else
+    elsif current_minute < 44
       @background = 'pile'
+    else
+      @background = '2014_fall_u12_team'
   	end
   end
 
